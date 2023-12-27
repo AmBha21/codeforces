@@ -34,18 +34,14 @@ for i in range(n):
     dragons.append(tuple(map(int, input().split())))
     dragons.sort(key = lambda x: x[0])
 
-condition = True
 counter = 0
 print_condition = True
-while condition:
-    for i in range(len(dragons)):
-        if s > dragons[i][0]:
-            s += dragons[i][1]
-        elif s <= dragons[i][0]:
-            print_condition = False
-            condition = False
-            break
-    break
+for i in range(len(dragons)):
+    if s > dragons[i][0]:
+        s += dragons[i][1]
+    elif s <= dragons[i][0]:
+        print_condition = False
+        break
 
 if print_condition:
     print('YES')
